@@ -1,8 +1,39 @@
 MOST IMPORTANT
 
-Todoist  is not neccessary, it is just an idea on a way to integrate it with an app on the phone.)  google tasks, keep, or some other task system or even a mySQL connection. I don't really care. but the concept is that tasks are updated and can be reviewed on another platform.
+Todoist  is not neccessary, it is just an idea on a way to integrate it with an app on the phone.) Google Tasks, keep, or some other task system or even a mySQL connection. I don't really care. but the concept is that tasks are updated and can be reviewed on another platform.
 
-this is my first application that I think I have ever published on Github and my first attempt.  
+# How It Works
+## 1. Starting the Application
+When you run the TaskMasterApp, it initializes the main window (GUI) where you can interact with various features.
+
+## 2. Task Management
+Adding Tasks: You can add new tasks to your list. Each task is stored and displayed in the application.
+Deleting Tasks: If you no longer need a task, you can delete it from your list.
+## 3. Integration with Todoist
+Synchronizing Tasks: The application connects to the Todoist API.
+Fetching Tasks from Todoist: It retrieves your tasks from Todoist, keeping your list updated.
+Adding Tasks to Todoist: You can add new tasks directly to your Todoist account through the app.
+Marking Tasks as Complete: When you finish a task, you can mark it as complete in Todoist via the app.
+## 4. Timer Functionality
+Tracking Task Duration: The app includes a timer to help you track how long you spend on a task.
+Timer Controls: You can start, pause, stop, and reset the timer as needed for each task.
+## 5. Sound Notifications
+Audible Alerts: The app can play sound notifications (beeps) to alert you at specific times, like when a task is due.
+## 6. User Interface Interactions
+Using the GUI: The app's graphical interface is built with Tkinter, allowing easy interaction through buttons and displays.
+Task Operations: You can perform all task-related operations like adding, deleting, and viewing tasks through the GUI.
+Timer and Sound Controls: Control the timer and toggle sound notifications using the interface.
+## 7. File Handling
+Task Persistence: The app reads from and writes to JSON files, ensuring your tasks are saved even when the app is closed.
+## 8. User Settings and Preferences
+Customizable Settings: You can adjust settings like the reminder interval and whether to mute sounds.
+## 9. Error Handling and Notifications
+Robust Error Management: The app includes error handling, particularly for network interactions with Todoist.
+User Notifications: If an error occurs or an operation is completed, the app informs you via message boxes.
+
+
+
+### this is my first application that I think I have ever published on Github and my first attempt.  
 
 this is a tool I want to build for me. but I think other people might find it useful.  I just can't get my thoughts into python.
 

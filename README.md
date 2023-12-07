@@ -1,6 +1,6 @@
 MOST IMPORTANT
 
-Todoist (a todo application is not neccessary, it is just an idea on a way to integrate it with an app on the phone.)  google tasks, keep, or some other task system or even a mySQL connection. I don't really care. but the concept is that tasks are updated and can be reviewed on another platform.
+Todoist  is not neccessary, it is just an idea on a way to integrate it with an app on the phone.)  google tasks, keep, or some other task system or even a mySQL connection. I don't really care. but the concept is that tasks are updated and can be reviewed on another platform.
 
 this is my first application that I think I have ever published on Github and my first attempt.  
 
@@ -8,6 +8,21 @@ this is a tool I want to build for me. but I think other people might find it us
 
 much of this code has been created using chatgpt and I have tried co-pilot unsuccessfully.
 
+Task Management Module: To handle tasks including adding, deleting, and displaying tasks.
+
+(not important) Todoist API Integration Module: For synchronizing tasks with Todoist, including fetching, adding, and marking tasks as complete.
+
+Timer Module: To manage a timer for task duration tracking, with start, pause, stop, and reset functionalities.
+
+Sound Notifications: Implementing sound notifications for time intervals or reminders.
+
+GUI Module: Using Tkinter for creating the user interface with necessary buttons and display areas for tasks and timer.
+
+File Handling Module: For reading and writing task data to JSON files.
+
+User Settings and Preferences: To manage settings like reminder intervals and sound muting options.
+
+Error Handling and Notifications: Ensuring robust error handling, especially in network interactions, and user notifications via message boxes.
 
 # TodoADHD
 This is a todo list and task manager for people that have trouble focusing or have ADD or ADHD

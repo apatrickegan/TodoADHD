@@ -1,33 +1,34 @@
-MOST IMPORTANT
+# MOST IMPORTANT
 
 Todoist  is not neccessary, it is just an idea on a way to integrate it with an app on the phone.) Google Tasks, keep, or some other task system or even a mySQL connection. I don't really care. but the concept is that tasks are updated and can be reviewed on another platform.
 
 
-Title: Join Our Community Project: Building a Python-Based Task Management Tool for ADHD!
+# Join Our Community Project: Building a Python-Based Task Management Tool for ADHD!
 
-Body:
-
-Hello everyone in the ADHD community! 👋
+## Hello everyone in the ADHD community! 👋
 
 I'm excited to share a collaborative opportunity that's close to my heart. Many of us here understand the unique challenges of managing tasks and staying organized with ADHD. To make a difference, I'm spearheading a community-driven project to develop a task management tool tailored for those with ADHD, and I'm seeking fellow Python programmers to join this initiative!
 
-Project Focus:
+# Project Focus:
 
 Creating a Specialized Tool: We aim to develop a Python application that caters to the specific needs of individuals with ADHD, helping with focus, task breakdown, and managing distractions.
 Open-Source Collaboration: This is an open-source project, meaning everything we create will be freely available for anyone to use and contribute to.
 Driven by Community: Your insights, experiences, and contributions will shape this tool to be truly beneficial for the ADHD community.
 Looking For:
 
-Python Programmers: Whether you're a seasoned developer or a beginner with a passion for Python, your coding skills can help bring this project to life.
+# Python Programmers: 
+Whether you're a seasoned developer or a beginner with a passion for Python, your coding skills can help bring this project to life.
 ADHD Advocates: If you have insights or ideas on what would make a task management tool genuinely helpful for those with ADHD, we need your input too!
 How to Get Involved:
 
-Contribute Your Skills: We need help with coding, testing, and refining the tool.
+# Contribute Your Skills: 
+We need help with coding, testing, and refining the tool.
 Share Ideas and Feedback: Suggestions on features or improvements are always welcome.
 Test and Review: Even if you're not a coder, trying out the tool and providing feedback is a huge help.
 Why Participate?
 
-Impact Lives: Your contribution can make daily life easier for individuals with ADHD.
+# Impact Lives: 
+Your contribution can make daily life easier for individuals with ADHD.
 Grow and Learn: Enhance your skills, collaborate with others, and be part of an exciting project.
 Community Spirit: Join a group of passionate people united by a common goal.
 For those interested in the technical side, we're coordinating through GitHub. It's a platform where we can collaboratively write code, track progress, and discuss the project. However, the main conversation and collaboration will happen right here in our community.

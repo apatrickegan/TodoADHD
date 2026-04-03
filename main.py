@@ -1,3 +1,21 @@
+import subprocess
+import sys
+
+def _ensure_packages():
+    required = ["requests", "keyring"]
+    missing = []
+    for pkg in required:
+        try:
+            __import__(pkg)
+        except ImportError:
+            missing.append(pkg)
+    if missing:
+        print(f"Installing missing packages: {', '.join(missing)}")
+        subprocess.check_call([sys.executable, "-m", "pip", "install", *missing])
+        print("Done. Continuing startup...")
+
+_ensure_packages()
+
 import tkinter as tk
 from tkinter import simpledialog, messagebox, filedialog
 from real_estate_listings import RealEstateListingApp

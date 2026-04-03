@@ -7,6 +7,25 @@ import winsound
 import uuid
 import json
 import os
+import keyring
+
+KEYRING_SERVICE = "TodoADHD"
+KEYRING_USERNAME = "todoist_api_token"
+
+def get_api_token():
+    """Return the Todoist API token from the OS keychain, prompting if not set."""
+    token = keyring.get_password(KEYRING_SERVICE, KEYRING_USERNAME)
+    if not token:
+        token = simpledialog.askstring(
+            "Todoist API Token",
+            "Enter your Todoist API token:\n(Stored securely in Windows Credential Manager)",
+            show='*'
+        )
+        if token:
+            keyring.set_password(KEYRING_SERVICE, KEYRING_USERNAME, token)
+        else:
+            messagebox.showwarning("No Token", "Todoist features will be disabled until a token is provided.")
+    return token
 
 # Utility functions for JSON handling
 def load_json_file(filename, default_value=None):
@@ -165,7 +184,7 @@ class ProductivityTimerApp:
     
     def fetch_todoist_tasks(self):
         """Fetch tasks from Todoist using Sync API and update the application."""
-        api_token = os.environ.get('TODOIST_API_TOKEN')
+        api_token = get_api_token()
 
         # Sync local unsynced tasks to Todoist
         for task in self.local_unsynced_tasks:
@@ -236,7 +255,7 @@ class ProductivityTimerApp:
             print(f"Deleting task: {self.task_name} with Todoist ID: {todoist_task_id}")  # Logging for debugging
             if todoist_task_id:
                 try:
-                    response = delete_todoist_task(os.environ.get('TODOIST_API_TOKEN'), todoist_task_id)
+                    response = delete_todoist_task(get_api_token(), todoist_task_id)
                     print(f"Response from Todoist: {response}")  # Logging the response
                     self.tasks.remove(self.task_name)
                     del self.task_name_to_id_map[self.task_name]
@@ -396,7 +415,7 @@ class ProductivityTimerApp:
             save_json_to_file(self.tasks, self.task_list_file)
 
             # Create the task in Todoist and store the command UUID
-            api_token = os.environ.get('TODOIST_API_TOKEN')
+            api_token = get_api_token()
             try:
                 command_uuid = create_todoist_task(api_token, new_task)
                 # Store the command UUID against the new task name for future mapping after sync
@@ -444,7 +463,7 @@ class ProductivityTimerApp:
             self.start_or_complete_task()
 
         # Mark the task as complete in Todoist
-        api_token = os.environ.get('TODOIST_API_TOKEN')
+        api_token = get_api_token()
         todoist_task_id = self.get_todoist_task_id(completed_task_name)
         
         if todoist_task_id:

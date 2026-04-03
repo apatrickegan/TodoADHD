@@ -165,7 +165,7 @@ class ProductivityTimerApp:
     
     def fetch_todoist_tasks(self):
         """Fetch tasks from Todoist using Sync API and update the application."""
-        api_token = 'ff433257564136ab0e653cefe8988c61f58afd52'  # Your Todoist API token
+        api_token = os.environ.get('TODOIST_API_TOKEN')
 
         # Sync local unsynced tasks to Todoist
         for task in self.local_unsynced_tasks:
@@ -236,7 +236,7 @@ class ProductivityTimerApp:
             print(f"Deleting task: {self.task_name} with Todoist ID: {todoist_task_id}")  # Logging for debugging
             if todoist_task_id:
                 try:
-                    response = delete_todoist_task('ff433257564136ab0e653cefe8988c61f58afd52', todoist_task_id)
+                    response = delete_todoist_task(os.environ.get('TODOIST_API_TOKEN'), todoist_task_id)
                     print(f"Response from Todoist: {response}")  # Logging the response
                     self.tasks.remove(self.task_name)
                     del self.task_name_to_id_map[self.task_name]
@@ -396,7 +396,7 @@ class ProductivityTimerApp:
             save_json_to_file(self.tasks, self.task_list_file)
 
             # Create the task in Todoist and store the command UUID
-            api_token = 'ff433257564136ab0e653cefe8988c61f58afd52'  # Your Todoist API token
+            api_token = os.environ.get('TODOIST_API_TOKEN')
             try:
                 command_uuid = create_todoist_task(api_token, new_task)
                 # Store the command UUID against the new task name for future mapping after sync
@@ -444,7 +444,7 @@ class ProductivityTimerApp:
             self.start_or_complete_task()
 
         # Mark the task as complete in Todoist
-        api_token = 'todoistapitoken'  # Replace with your Todoist API token
+        api_token = os.environ.get('TODOIST_API_TOKEN')
         todoist_task_id = self.get_todoist_task_id(completed_task_name)
         
         if todoist_task_id:
